@@ -15,12 +15,21 @@ npm install --save react-debounce-on-change
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'react-debounce-on-change'
+import DebounceOnChange from 'react-debounce-on-change'
 
 class Example extends Component {
   render () {
     return (
-      <MyComponent />
+        <DebounceOnChange
+            wait={1000}
+            value={this.state.value}
+            onChange={(e) => {
+                this.setState({value : e.target.value})
+            }}
+            extractValue={e => e.target.value}
+        >
+            <input type="text" placeholder="Enter text here" />
+        </DebounceOnChange>
     )
   }
 }

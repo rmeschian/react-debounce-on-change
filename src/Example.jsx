@@ -1,9 +1,7 @@
-import React, { Component } from 'react'
 
-import DebounceOnChange from 'react-debounce-on-change'
+import DebounceOnChange from '../lib/DebounceOnChange';
 
-
-class App extends Component {
+class Example extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -22,11 +20,11 @@ class App extends Component {
                 }}
                 extractValue={e => e.target.value}
             >
-                <input type="text" placeholder="Enter text here" />
+                <input type="text"/>
             </DebounceOnChange>
-            <p>The text was changed to: <b>{that.state.value}</b></p>
+            <p>{that.state.value}</p>
         </div>);
     };
 }
 
-export default App;
+export default Example;
