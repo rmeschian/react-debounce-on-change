@@ -26,7 +26,6 @@ class Example extends Component {
             onChange={(e) => {
                 this.setState({value : e.target.value})
             }}
-            extractValue={e => e.target.value}
         >
             <input type="text" placeholder="Enter text here" />
         </DebounceOnChange>
